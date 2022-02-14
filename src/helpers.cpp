@@ -1,4 +1,3 @@
-#include "../include/functions.hpp"
 #include "../include/global.hpp"
 #include <iostream>
 

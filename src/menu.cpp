@@ -1,5 +1,4 @@
 #include "../include/variadic-table.h"
-#include "../include/functions.hpp"
 #include "../include/global.hpp"
 #include <iostream>
 using namespace std;
