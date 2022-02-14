@@ -1,21 +1,19 @@
-#include "../include/global.hpp"
+#include "../include/Global.h"
 #include <vector>
 #include <fstream>
 #include <sstream>
 
-using namespace std;
-
 /* mendapatkan data buku */
-auto fetchData()
+std::vector<std::vector<std::string>> fetchData()
 {
-    string line, word;
-    vector<vector<string>> data;
-    ifstream db;
+    std::string line, word;
+    std::vector<std::vector<std::string>> data;
+    std::ifstream db;
     db.open(".database/DataBuku.csv");
     while (getline(db, line))
     {
-        vector<string> row;
-        stringstream stream(line);
+        std::vector<std::string> row;
+        std::stringstream stream(line);
         while (getline(stream, word, ','))
         {
             row.push_back(word);

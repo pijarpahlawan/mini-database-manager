@@ -1,4 +1,5 @@
-#include "../include/global.hpp"
+#include "../include/Global.h"
+#include "../include/Reset.h"
 
 int main()
 {
@@ -17,8 +18,8 @@ int main()
             repeat = false;
             break;
         case 3:
-            resetDatabase();
-            repeat = false;
+            Reset *database = new Reset;
+            delete database;
             break;
         case 4:
             cmdcons("bersihkan layar");
