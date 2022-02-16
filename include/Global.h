@@ -11,7 +11,6 @@
 #include <string>
 #include <vector>
 
-extern int menu();
 extern void cmdcons(const std::string &);
 extern void warning(const std::string &);
 extern void notification(const std::string &);

@@ -1,8 +1,10 @@
 #include "../include/Global.h"
-#include "../include/Reset.h"
+#include "../include/Menu.h"
+#include "../include/Programs.h"
 
 int main()
 {
+    Programs program;
     bool repeat = true;
 
     while (repeat)
@@ -18,8 +20,7 @@ int main()
             repeat = false;
             break;
         case 3:
-            Reset *database = new Reset;
-            delete database;
+            program.resetdb();
             break;
         case 4:
             cmdcons("bersihkan layar");
