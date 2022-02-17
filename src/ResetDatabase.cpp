@@ -1,4 +1,4 @@
-#include "../include/CheckDB.h"
+#include "../include/Global.h"
 #include "../include/Programs.h"
 #include <iostream>
 

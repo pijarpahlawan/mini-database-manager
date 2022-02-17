@@ -17,6 +17,7 @@ extern void notification(const std::string &);
 extern void cont(const std::string &);
 extern bool stringalldgt(const std::string &);
 extern bool stringonlyws(const std::string &);
+extern bool dbexists();
 extern char mklc(char);
 extern std::string fprice(std::string);
 extern std::vector<std::vector<std::string>> fetchData();
