@@ -1,4 +1,3 @@
-#include "../include/Global.h"
 #include "../include/Menu.h"
 #include "../include/Programs.h"
 
@@ -12,8 +11,7 @@ int main()
         switch (menu())
         {
         case 1:
-            update();
-            repeat = false;
+            program.updatedb();
             break;
         case 2:
             buyBook();

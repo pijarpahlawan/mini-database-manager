@@ -6,7 +6,6 @@
 int menu()
 {
     std::string tindakan[] = {"Mengupdate data buku", "Membeli buku", "Menghapus data buku", "Keluar aplikasi"};
-    std::string pilihan = "\0";
     int choice = 0;
 
     cmdcons("bersihkan layar");
@@ -19,7 +18,6 @@ int menu()
     vt.print(std::cout);
 
     std::cout << "Masukkan pilihan: ";
-    std::cin >> pilihan;
-    choice = stoi(pilihan);
+    std::cin >> choice;
     return choice;
 }

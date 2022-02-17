@@ -4,6 +4,10 @@
  */
 class CRUD
 {
+private:
+    int choice;
+    char confirm;
+
 protected:
     void create();
     void read();

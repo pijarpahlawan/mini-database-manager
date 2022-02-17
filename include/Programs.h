@@ -1,6 +1,10 @@
 #include "../include/CRUD.h"
 
-class Programs : private CRUD
+/**
+ * @brief class berisi bagian program
+ *
+ */
+class Programs : CRUD
 {
 private:
     char confirm;
