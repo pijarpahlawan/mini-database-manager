@@ -1,23 +1,35 @@
 #include "../include/VariadicTable.h"
 #include "../include/Global.h"
 #include "../include/Programs.h"
-#include <iostream>
 #include <limits>
 
 int menu();
 int main()
 {
     Programs program;
-    bool repeat = true;
+    int choice;
 
-    if (menu() == 1)
-        program.updatedb();
-    else if (menu() == 2)
-        buybook();
-    else if (menu() == 3)
-        program.resetdb();
-    else
-        cmdcons("bersihkan layar");
+    while (true)
+    {
+        choice = menu();
+        if (choice == 1)
+        {
+            program.updatedb();
+        }
+        else if (choice == 2)
+        {
+            buybook();
+        }
+        else if (choice == 3)
+        {
+            program.resetdb();
+        }
+        else
+        {
+            cmdcons("bersihkan layar");
+            break;
+        }
+    }
 
     return 0;
 }

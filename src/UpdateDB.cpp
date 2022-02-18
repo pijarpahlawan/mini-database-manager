@@ -7,9 +7,9 @@ void Programs::updatedb()
     confirm = '\0';
     if (!dbexists())
     {
+        warning("Database kosong");
         while (true)
         {
-            warning("Database kosong");
             std::cout << "\n\nTambahkan data? (y/n): ";
             std::cin >> confirm;
             if (!(mklc(confirm) == 'y' || mklc(confirm) == 'n'))
@@ -21,8 +21,10 @@ void Programs::updatedb()
                 break;
         }
         if (mklc(confirm) == 'y')
+        {
             create();
-        update;
+            update();
+        }
     }
     else
         update();
