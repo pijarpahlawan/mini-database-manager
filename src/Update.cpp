@@ -32,7 +32,7 @@ void CRUD::update()
         {
             del();
             data = fetchdata();
-            if (data.size() == 0)
+            if (!dbexists())
             {
                 notification("Tidak ada buku saat ini");
                 cont("kembali ke menu");

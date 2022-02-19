@@ -3,8 +3,8 @@
 
 bool dbexists()
 {
-    std::ifstream db(DB_PATH);
-    if (db)
+    buffer data = fetchdata();
+    if (data.size() != 0)
         return true;
     else
         return false;

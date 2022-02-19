@@ -8,14 +8,12 @@
 void CRUD::del()
 {
     buffer data = fetchdata();
-    std::string check = "";
-    std::ofstream db_out;
-    std::ifstream db_in;
+    std::ofstream db;
 
     std::cout << "\nMasukkan nomor indeks buku yang mau dihapus: ";
     std::cin >> choice;
     // buku yang dipilih harus ada dalam daftar yang ditampilkan
-    if (std::cin.fail() && (choice > 0 && choice <= data.size()))
+    if (!std::cin.fail() && (choice > 0 && choice <= data.size()))
     {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -33,27 +31,23 @@ void CRUD::del()
                 data[choice].erase(data[choice].begin(), data[choice].end());
 
                 // memasukkan data baru ke dalam database
-                db_out.open(".database/DataBuku.csv");
+                db.open(DB_PATH);
                 for (int i = 0; i < data.size(); i++)
                 {
                     for (int j = 0; j < data[i].size(); j++)
                     {
-                        db_out << data[i][j];
+                        db << data[i][j];
                         if (j != 10)
-                            db_out << ',';
+                            db << ',';
                         else
-                            db_out << '\n';
+                            db << '\n';
                     }
                 }
-                db_out.close();
+                db.close();
 
                 // jika database kosong maka hapus file database
-                db_in.open(".database/DataBuku.csv");
-                db_in >> check;
-                db_in.close();
-                if (db_in.eof())
+                if (!dbexists())
                     cmdcons("hapus database");
-
                 break;
             }
             else if (mklc(confirm) == 'n')

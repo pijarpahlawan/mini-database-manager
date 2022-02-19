@@ -1,16 +1,15 @@
 #include "../include/Global.h"
 #include "../include/CRUD.h"
-#include "sys/stat.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
 
 void CRUD::create()
 {
-    confirm = '\0';
-
-    std::string temp[11];
     bool dont_use_goto = true;
+    std::string temp[11];
+
+    confirm = '\0';
 
 insert:
     cmdcons("bersihkan layar");
@@ -37,8 +36,7 @@ insert:
     }
 
     // membuat direktori database
-    struct stat info;
-    if (stat(".database", &info) != 0)
+    if (!dbexists())
     {
         if (OS_WINDOWS)
             system("mkdir .database && attrib +h .database");
@@ -47,7 +45,7 @@ insert:
     }
 
     // menulis data yang sudah terverifikasi ke dalam database
-    std::ofstream db(".database/DataBuku.csv", std::ios::app);
+    std::ofstream db(DB_PATH, std::ios::app);
     for (int i = 0; i < 11; i++)
     {
         db << temp[i];

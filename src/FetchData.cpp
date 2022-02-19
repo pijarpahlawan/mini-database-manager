@@ -8,7 +8,7 @@ buffer fetchdata()
     std::string line, word;
     buffer data;
     std::ifstream db;
-    db.open(".database/DataBuku.csv");
+    db.open(DB_PATH);
     while (getline(db, line))
     {
         std::vector<std::string> row;
