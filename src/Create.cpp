@@ -9,7 +9,7 @@ void CRUD::create()
 {
     confirm = '\0';
 
-    std::string penampung[11];
+    std::string temp[11];
     bool dont_use_goto = true;
 
 insert:
@@ -20,14 +20,14 @@ insert:
     std::cout << "\t\t    ----------------------------\n\n";
     for (int i = 0; i < 11; i++)
     {
-        std::cout << detail_buku[i];
+        std::cout << details[i];
         if (i == 0 && dont_use_goto)
             std::cin.ignore();
-        getline(std::cin, penampung[i]);
+        getline(std::cin, temp[i]);
     }
 
     // memverifikasi apakah user menginputkan integer di detail harga
-    if (!stringalldgt(penampung[10]) || stringonlyws(penampung[0]))
+    if (!stringalldgt(temp[10]) || stringonlyws(temp[0]))
     {
         dont_use_goto = false;
         notification("Judul buku harus ada dan harga harus diisi berupa angka");
@@ -50,7 +50,7 @@ insert:
     std::ofstream db(".database/DataBuku.csv", std::ios::app);
     for (int i = 0; i < 11; i++)
     {
-        db << penampung[i];
+        db << temp[i];
         if (i != 10)
             db << ',';
         else

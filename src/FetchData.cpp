@@ -3,10 +3,10 @@
 #include <sstream>
 
 /* mendapatkan data buku */
-std::vector<std::vector<std::string>> fetchData()
+buffer fetchdata()
 {
     std::string line, word;
-    std::vector<std::vector<std::string>> data;
+    buffer data;
     std::ifstream db;
     db.open(".database/DataBuku.csv");
     while (getline(db, line))

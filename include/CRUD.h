@@ -10,7 +10,7 @@ private:
 
 protected:
     void create();
-    void read(std::vector<std::vector<std::string>> data);
+    void read(buffer);
     void update();
     void del();
 };

@@ -7,7 +7,7 @@
 /* menghapus data indeks buku dalam database */
 void CRUD::del()
 {
-    std::vector<std::vector<std::string>> data_buku = fetchData();
+    buffer data = fetchdata();
     std::string check = "";
     std::ofstream db_out;
     std::ifstream db_in;
@@ -15,7 +15,7 @@ void CRUD::del()
     std::cout << "\nMasukkan nomor indeks buku yang mau dihapus: ";
     std::cin >> choice;
     // buku yang dipilih harus ada dalam daftar yang ditampilkan
-    if (std::cin.fail() && (choice > 0 && choice <= data_buku.size()))
+    if (std::cin.fail() && (choice > 0 && choice <= data.size()))
     {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -30,15 +30,15 @@ void CRUD::del()
                 choice = choice - 1;
 
                 // perintah untuk menghapus data buku yang dipilih
-                data_buku[choice].erase(data_buku[choice].begin(), data_buku[choice].end());
+                data[choice].erase(data[choice].begin(), data[choice].end());
 
                 // memasukkan data baru ke dalam database
                 db_out.open(".database/DataBuku.csv");
-                for (int i = 0; i < data_buku.size(); i++)
+                for (int i = 0; i < data.size(); i++)
                 {
-                    for (int j = 0; j < data_buku[i].size(); j++)
+                    for (int j = 0; j < data[i].size(); j++)
                     {
-                        db_out << data_buku[i][j];
+                        db_out << data[i][j];
                         if (j != 10)
                             db_out << ',';
                         else

@@ -37,7 +37,8 @@ int main()
 /* menu aksi */
 int menu()
 {
-    std::string tindakan[] = {"Mengupdate data buku", "Membeli buku", "Menghapus data buku", "Keluar aplikasi"};
+    std::string action[] = {"Mengupdate data buku", "Membeli buku",
+                            "Menghapus data buku", "Keluar aplikasi"};
     int choice = 0;
 
     while (true)
@@ -47,7 +48,7 @@ int menu()
         VariadicTable<int, std::string> vt({"No.", "Tindakan"});
         for (int i = 0; i < 4; i++)
         {
-            vt.addRow(i + 1, tindakan[i]);
+            vt.addRow(i + 1, action[i]);
         }
         vt.print(std::cout);
 

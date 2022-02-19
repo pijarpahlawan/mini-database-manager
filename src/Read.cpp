@@ -2,7 +2,7 @@
 #include "../include/Global.h"
 #include "../include/CRUD.h"
 
-void CRUD::read(std::vector<std::vector<std::string>> data)
+void CRUD::read(buffer data)
 {
 
     cmdcons("bersihkan layar");

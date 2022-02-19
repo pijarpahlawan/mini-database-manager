@@ -5,15 +5,16 @@
 
 void CRUD::update()
 {
-    std::vector<std::vector<std::string>> data_buku = fetchData();
+    buffer data = fetchdata();
     choice = 0;
 
     while (true)
     {
         while (true)
         {
-            read(data_buku);
-            std::cout << "Pilihan:\n[1] Menambah buku\n[2] Menghapus buku\n[3] Kembali\n\nSilahkan pilih: ";
+            read(data);
+            std::cout << "Pilihan:\n[1] Menambah buku\n[2] Menghapus buku\n\
+            [3] Kembali\n\nSilahkan pilih: ";
             std::cin >> choice;
             if (!std::cin.fail() && (choice >= 1 && choice <= 3))
                 break;
@@ -25,13 +26,13 @@ void CRUD::update()
         if (choice == 1)
         {
             create();
-            data_buku = fetchData();
+            data = fetchdata();
         }
         else if (choice == 2)
         {
             del();
-            data_buku = fetchData();
-            if (data_buku.size() == 0)
+            data = fetchdata();
+            if (data.size() == 0)
             {
                 notification("Tidak ada buku saat ini");
                 cont("kembali ke menu");
