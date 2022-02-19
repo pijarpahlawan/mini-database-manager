@@ -10,6 +10,9 @@ void CRUD::del()
     buffer data = fetchdata();
     std::ofstream db;
 
+    choice = 0;
+    confirm = '\0';
+
     std::cout << "\nMasukkan nomor indeks buku yang mau dihapus: ";
     std::cin >> choice;
     // buku yang dipilih harus ada dalam daftar yang ditampilkan

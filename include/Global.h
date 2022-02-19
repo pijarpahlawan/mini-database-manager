@@ -22,9 +22,4 @@ extern bool dbexists();
 extern char mklc(char);
 extern std::string fprice(std::string);
 extern buffer fetchdata();
-extern std::string details[] = {"Judul buku      : ", "Penulis         : ",
-                                "Jumlah halaman  : ", "Bahasa          : ",
-                                "Penerbit        : ", "Tanggal terbit  : ",
-                                "ISBN            : ", "Panjang         : ",
-                                "Lebar           : ", "Berat           : ",
-                                "Harga           : "};
+extern std::string details[11];

@@ -7,6 +7,7 @@
 class Programs : CRUD
 {
 private:
+    int choice;
     char confirm;
     void showdetails(buffer);
     void getpaid(std::string, int &, int &);

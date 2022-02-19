@@ -13,8 +13,8 @@ void CRUD::update()
         while (true)
         {
             read(data);
-            std::cout << "Pilihan:\n[1] Menambah buku\n[2] Menghapus buku\n\
-            [3] Kembali\n\nSilahkan pilih: ";
+            std::cout << "Pilihan:\n[1] Menambah buku\n[2] Menghapus buku\
+            \n[3] Kembali\n\nSilahkan pilih: ";
             std::cin >> choice;
             if (!std::cin.fail() && (choice >= 1 && choice <= 3))
                 break;

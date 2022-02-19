@@ -3,6 +3,13 @@
 #include "../include/Programs.h"
 #include <limits>
 
+std::string details[] = {"Judul buku      : ", "Penulis         : ",
+                         "Jumlah halaman  : ", "Bahasa          : ",
+                         "Penerbit        : ", "Tanggal terbit  : ",
+                         "ISBN            : ", "Panjang         : ",
+                         "Lebar           : ", "Berat           : ",
+                         "Harga           : "};
+
 int menu();
 int main()
 {
@@ -18,7 +25,7 @@ int main()
         }
         else if (choice == 2)
         {
-            buybook();
+            program.buy();
         }
         else if (choice == 3)
         {
