@@ -15,7 +15,7 @@ void CRUD::update()
             read(data_buku);
             std::cout << "Pilihan:\n[1] Menambah buku\n[2] Menghapus buku\n[3] Kembali\n\nSilahkan pilih: ";
             std::cin >> choice;
-            if (!(std::cin.fail() || (choice < 1 || choice > 3)))
+            if (!std::cin.fail() && (choice >= 1 && choice <= 3))
                 break;
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -29,7 +29,7 @@ void CRUD::update()
         }
         else if (choice == 2)
         {
-            deleteData();
+            del();
             data_buku = fetchData();
             if (data_buku.size() == 0)
             {

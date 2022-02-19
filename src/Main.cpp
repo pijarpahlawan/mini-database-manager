@@ -53,7 +53,7 @@ int menu()
 
         std::cout << "Masukkan pilihan: ";
         std::cin >> choice;
-        if (!(std::cin.fail() || (choice < 1 || choice > 4)))
+        if (!std::cin.fail() && (choice >= 1 && choice <= 4))
             break;
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
