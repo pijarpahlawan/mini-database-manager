@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 
-/* fungsi untuk meminta tagihan */
 /**
  * @brief fungsi untuk meminta tagihan
  *
