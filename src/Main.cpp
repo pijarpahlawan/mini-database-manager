@@ -1,14 +1,6 @@
 #include "../include/VariadicTable.h"
 #include "../include/Global.h"
 #include "../include/Programs.h"
-#include <limits>
-
-std::string details[] = {"Judul buku      : ", "Penulis         : ",
-                         "Jumlah halaman  : ", "Bahasa          : ",
-                         "Penerbit        : ", "Tanggal terbit  : ",
-                         "ISBN            : ", "Panjang         : ",
-                         "Lebar           : ", "Berat           : ",
-                         "Harga           : "};
 
 int menu();
 int main()
@@ -64,7 +56,6 @@ int menu()
         if (!std::cin.fail() && (choice >= 1 && choice <= 4))
             break;
         std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         notification("Masukkan angka sesuai dengan pilihan yang tersedia");
         cont("kembali memilih");
     }

@@ -21,6 +21,7 @@ void Programs::buy()
                 showdetails(data);
                 break;
             }
+            std::cin.clear();
             notification("Masukkan angka sesuai dengan pilihan yang tersedia");
             cont("memasukkan pilihan kembali");
         }

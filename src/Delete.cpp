@@ -2,7 +2,6 @@
 #include "../include/CRUD.h"
 #include <iostream>
 #include <fstream>
-#include <limits>
 
 /* menghapus data indeks buku dalam database */
 void CRUD::del()
@@ -18,8 +17,6 @@ void CRUD::del()
     // buku yang dipilih harus ada dalam daftar yang ditampilkan
     if (!std::cin.fail() && (choice > 0 && choice <= data.size()))
     {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         while (true)
         {
             // konfirmasi penghapusan data
@@ -67,8 +64,8 @@ void CRUD::del()
     }
     else
     {
+        std::cin.clear();
         notification("Masukkan angka sesuai dengan pilihan yang tersedia");
         cont("memasukkan pilihan kembali");
-        update();
     }
 }

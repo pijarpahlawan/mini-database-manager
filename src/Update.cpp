@@ -1,7 +1,6 @@
 #include "../include/Global.h"
 #include "../include/CRUD.h"
 #include <iostream>
-#include <limits>
 
 void CRUD::update()
 {
@@ -19,7 +18,6 @@ void CRUD::update()
             if (!std::cin.fail() && (choice >= 1 && choice <= 3))
                 break;
             std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             notification("Masukkan angka sesuai dengan pilihan yang tersedia");
             cont("memasukkan pilihan kembali");
         }

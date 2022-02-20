@@ -2,7 +2,6 @@
 #include "../include/Programs.h"
 #include <iostream>
 #include <string>
-#include <limits>
 
 void Programs::getpaid(std::string price, int &change, int &pay)
 {
@@ -35,9 +34,11 @@ void Programs::getpaid(std::string price, int &change, int &pay)
             else
                 break;
         }
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        notification("Masukkan bilangan positif");
-        cont("mengulangi");
+        else
+        {
+            std::cin.clear();
+            notification("Masukkan bilangan positif");
+            cont("mengulangi");
+        }
     }
 }

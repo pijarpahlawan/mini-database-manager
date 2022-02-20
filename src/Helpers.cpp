@@ -1,5 +1,6 @@
 #include "../include/Global.h"
 #include <iostream>
+#include <limits>
 
 /*  fungsi tempat command console berada */
 void cmdcons(const std::string &command)
@@ -82,7 +83,7 @@ void notification(const std::string &format)
 void cont(const std::string &str)
 {
     std::cout << "\nTekan ENTER untuk " + str + "...";
-    std::cin.ignore();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cin.get();
 }
 
