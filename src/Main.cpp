@@ -2,6 +2,14 @@
 #include "../include/Global.h"
 #include "../include/Programs.h"
 
+// detail buku yang diminta
+std::string details[] = {"Judul buku      : ", "Penulis         : ",
+                         "Jumlah halaman  : ", "Bahasa          : ",
+                         "Penerbit        : ", "Tanggal terbit  : ",
+                         "ISBN            : ", "Panjang         : ",
+                         "Lebar           : ", "Berat           : ",
+                         "Harga           : "};
+
 int menu();
 int main()
 {
@@ -33,13 +41,14 @@ int main()
     return 0;
 }
 
-/* menu aksi */
 int menu()
 {
     std::string action[] = {"Mengupdate data buku", "Membeli buku",
                             "Menghapus data buku", "Keluar aplikasi"};
     int choice = 0;
 
+    // selama input bukan merupakan integer dan tidak dalam interval
+    // 1 <= choice <= 4, maka input akan diulang
     while (true)
     {
         cmdcons("bersihkan layar");
@@ -59,5 +68,6 @@ int menu()
         notification("Masukkan angka sesuai dengan pilihan yang tersedia");
         cont("kembali memilih");
     }
+
     return choice;
 }

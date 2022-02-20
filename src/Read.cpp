@@ -2,6 +2,11 @@
 #include "../include/Global.h"
 #include "../include/CRUD.h"
 
+/**
+ * @brief fungsi untuk menampilkan data
+ *
+ * @param data database
+ */
 void CRUD::read(buffer data)
 {
 

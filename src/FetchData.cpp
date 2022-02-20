@@ -2,7 +2,11 @@
 #include <fstream>
 #include <sstream>
 
-/* mendapatkan data buku */
+/**
+ * @brief fungsi untuk mendapatkan data
+ *
+ * @return buffer
+ */
 buffer fetchdata()
 {
     std::string line, word;

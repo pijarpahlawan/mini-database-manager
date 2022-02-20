@@ -4,6 +4,10 @@
 #include <fstream>
 #include <sstream>
 
+/**
+ * @brief fungsi untuk menginput data buku ke dalam database
+ *
+ */
 void CRUD::create()
 {
     bool dont_use_goto = true;
@@ -14,7 +18,7 @@ void CRUD::create()
 insert:
     cmdcons("bersihkan layar");
 
-    // memasukkan detail buku ke dalam vector sebagai penyimpanan sementara
+    // memasukkan detail buku ke dalam array sebagai penyimpanan sementara
     std::cout << "\t\t\tMASUKKAN DETAIL BUKU\n";
     std::cout << "\t\t    ----------------------------\n\n";
     for (int i = 0; i < 11; i++)
@@ -25,7 +29,7 @@ insert:
         getline(std::cin, temp[i]);
     }
 
-    // memverifikasi apakah user menginputkan integer di detail harga
+    // memverifikasi inputan user
     if (!stringalldgt(temp[10]) || stringonlyws(temp[0]))
     {
         dont_use_goto = false;
@@ -35,7 +39,7 @@ insert:
         goto insert;
     }
 
-    // membuat direktori database
+    // membuat direktori database jika sebelumnya tidak terdapat database
     if (!dbexists())
     {
         if (OS_WINDOWS)

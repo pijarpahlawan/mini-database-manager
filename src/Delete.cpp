@@ -3,7 +3,10 @@
 #include <iostream>
 #include <fstream>
 
-/* menghapus data indeks buku dalam database */
+/**
+ * @brief menghapus salah satu data dalam database
+ *
+ */
 void CRUD::del()
 {
     buffer data = fetchdata();
@@ -27,7 +30,7 @@ void CRUD::del()
             {
                 choice = choice - 1;
 
-                // perintah untuk menghapus data buku yang dipilih
+                // perintah untuk menghapus data yang dipilih
                 data[choice].erase(data[choice].begin(), data[choice].end());
 
                 // memasukkan data baru ke dalam database

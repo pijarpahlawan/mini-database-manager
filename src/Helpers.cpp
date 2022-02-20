@@ -2,7 +2,11 @@
 #include <iostream>
 #include <limits>
 
-/*  fungsi tempat command console berada */
+/**
+ * @brief fungsi tempat command console berada
+ *
+ * @param command perintah
+ */
 void cmdcons(const std::string &command)
 {
     if (OS_WINDOWS)
@@ -21,7 +25,11 @@ void cmdcons(const std::string &command)
     }
 }
 
-/* fungsi untuk menampilkan peringatan */
+/**
+ * @brief fungsi untuk menampilkan peringatan
+ *
+ * @param format peringatan yang akan ditampilkan
+ */
 void warning(const std::string &format)
 {
     int mid = 55 - format.size();
@@ -53,7 +61,11 @@ void warning(const std::string &format)
     }
 }
 
-/* fungsi untuk menampilkan notifikasi */
+/**
+ * @brief fungsi untuk menampilkan notifikasi
+ *
+ * @param format notifikasi yang akan ditampilkan
+ */
 void notification(const std::string &format)
 {
     int mid = 75 - format.size();
@@ -79,7 +91,11 @@ void notification(const std::string &format)
     std::cout << std::endl;
 }
 
-/* fungsi untuk memberi keterangan tekan enter */
+/**
+ * @brief fungsi untuk memberi keterangan tekan enter
+ *
+ * @param str tujuan selanjutnya
+ */
 void cont(const std::string &str)
 {
     std::cout << "\nTekan ENTER untuk " + str + "...";
@@ -87,9 +103,13 @@ void cont(const std::string &str)
     std::cin.get();
 }
 
-/* fungsi untuk memeriksa apakah dalam angka terdapat huruf
-    - akan true jika inputan tidak ada string (all int)
-    - akan false jika inputan terdapat string (sekali dapat) */
+/**
+ * @brief fungsi untuk memeriksa apakah dalam angka terdapat huruf
+ *
+ * @param str kalimat yang akan diperiksa
+ * @return true jika inputan tidak ada string (all int)
+ * @return false jika inputan terdapat string (sekali dapat)
+ */
 bool stringalldgt(const std::string &str)
 {
     // inisialisasi awal dari iterator
@@ -101,9 +121,13 @@ bool stringalldgt(const std::string &str)
     return !str.empty() && it == str.end();
 }
 
-/* fungsi untuk memeriksa apakah dalam string hanya terdapat unsur whitespace
-    - akan true jika dalam string hanya terdapat unsur whitespace
-    - akan false jika dalam string tidak hanya terdapat unsur whitespace */
+/**
+ * @brief fungsi untuk memeriksa apakah dalam string hanya terdapat unsur whitespace
+ *
+ * @param str kalimat yang akan diperiksa
+ * @return true jika dalam string hanya terdapat unsur whitespace
+ * @return false jika dalam string tidak hanya terdapat unsur whitespace
+ */
 bool stringonlyws(const std::string &str)
 {
     auto it = str.begin();
@@ -112,7 +136,12 @@ bool stringonlyws(const std::string &str)
     return str.empty() || it == str.end();
 }
 
-/* fungsi untuk mengubah string ke lowercase */
+/**
+ * @brief fungsi untuk mengubah karaktee ke lowercase
+ *
+ * @param ch karakter yang akan diubah
+ * @return char karakter lowercase
+ */
 char mklc(char ch)
 {
     if (ch > 64 && ch < 91)
@@ -120,7 +149,12 @@ char mklc(char ch)
     return ch;
 }
 
-/* fungsi untuk me-format harga supaya mudah dibaca */
+/**
+ * @brief fungsi untuk me-format harga supaya mudah dibaca
+ *
+ * @param price harga yang akan diformat
+ * @return std::string harga terformat
+ */
 std::string fprice(std::string price)
 {
     int count = 0;

@@ -2,6 +2,11 @@
 #include "../include/Programs.h"
 #include "../include/VariadicTable.h"
 
+/**
+ * @brief fungsi untuk memberikan detail buku yang dipilih
+ *
+ * @param data database
+ */
 void Programs::showdetails(buffer data)
 {
     int pay = 0;
@@ -30,7 +35,7 @@ void Programs::showdetails(buffer data)
         std::cin >> confirm;
         if (mklc(confirm) == 'y')
         {
-            getpaid(data[choice][10], change, pay);
+            getpaid(data[choice][10], pay, change);
             getreceipt(data, pay, change);
             break;
         }

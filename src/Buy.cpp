@@ -2,6 +2,10 @@
 #include "../include/Programs.h"
 #include <iostream>
 
+/**
+ * @brief program untuk membeli buku
+ *
+ */
 void Programs::buy()
 {
     buffer data = fetchdata();
@@ -9,6 +13,8 @@ void Programs::buy()
 
     if (dbexists())
     {
+        // selama input bukan merupakan integer dan tidak ada dalam pilihan
+        // maka input akan diulang
         while (true)
         {
             read(data);

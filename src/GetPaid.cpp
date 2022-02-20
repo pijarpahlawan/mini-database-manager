@@ -3,7 +3,15 @@
 #include <iostream>
 #include <string>
 
-void Programs::getpaid(std::string price, int &change, int &pay)
+/* fungsi untuk meminta tagihan */
+/**
+ * @brief fungsi untuk meminta tagihan
+ *
+ * @param price harga buku
+ * @param pay pembayaran yang diinputkan
+ * @param change kembalian pembayaran
+ */
+void Programs::getpaid(std::string price, int &pay, int &change)
 {
     int bill = 0;
     while (true)

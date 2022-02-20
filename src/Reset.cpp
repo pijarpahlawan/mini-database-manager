@@ -2,6 +2,10 @@
 #include "../include/Programs.h"
 #include <iostream>
 
+/**
+ * @brief program untuk mereset database
+ *
+ */
 void Programs::resetdb()
 {
     confirm = '\0';

@@ -2,6 +2,10 @@
 #include "../include/CRUD.h"
 #include <iostream>
 
+/**
+ * @brief fungsi untuk memberi pilihan update (insert atau delete)
+ *
+ */
 void CRUD::update()
 {
     buffer data = fetchdata();
@@ -9,6 +13,8 @@ void CRUD::update()
 
     while (true)
     {
+        // selama input bukan merupakan integer dan tidak dalam interval
+        // 1 <= choice <= 3, maka input akan diulang
         while (true)
         {
             read(data);

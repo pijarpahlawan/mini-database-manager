@@ -11,7 +11,7 @@ private:
     char confirm;
     void showdetails(buffer);
     void getpaid(std::string, int &, int &);
-    void getreceipt(buffer, int, int);
+    void getreceipt(buffer, const int &, const int &);
 
 public:
     void updatedb();

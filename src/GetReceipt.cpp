@@ -4,7 +4,14 @@
 #include <fstream>
 #include <sys/stat.h>
 
-void Programs::getreceipt(buffer data, int money_in, int money_out)
+/**
+ * @brief fungsi untuk mendapatkan bukti pembelian
+ *
+ * @param data database
+ * @param pay pembayaran yang diinputkan
+ * @param change kembalian pembayaran
+ */
+void Programs::getreceipt(buffer data, const int &pay, const int &change)
 {
     std::ofstream write;
     std::ifstream read;
@@ -37,8 +44,8 @@ void Programs::getreceipt(buffer data, int money_in, int money_out)
     VariadicTable<std::string> receipt({"*** Bukti Pembayaran ***"});
     receipt.addRow(details[0] + data[choice][0]);
     receipt.addRow(details[10] + fprice(data[choice][10]));
-    receipt.addRow("Dibayarkan      : " + fprice(std::to_string(money_in)));
-    receipt.addRow("Kembalian       : " + fprice(std::to_string(money_out)));
+    receipt.addRow("Dibayarkan      : " + fprice(std::to_string(pay)));
+    receipt.addRow("Kembalian       : " + fprice(std::to_string(change)));
     receipt.print(write);
     write.close();
     cont("menampilkan bukti pembayaran");
