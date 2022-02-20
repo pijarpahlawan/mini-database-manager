@@ -3,3 +3,7 @@ This is a simple database program for bookstores. Features in this program inclu
 - create, read, update, and delete data or database
 - book purchase
 - exporting receipt from book purchased
+## How To Compile
+```bash
+./compile.sh
+```
