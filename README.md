@@ -3,6 +3,12 @@ This is a simple database program for bookstores. Features in this program inclu
 - update and reset database
 - book purchase
 ## How To Compile
+run this command in terminal
+### Linux
 ```bash
 ./compile.sh
+```
+### Windows
+```cmd
+compile.bat
 ```
